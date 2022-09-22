@@ -59,12 +59,12 @@ None
 ```mermaid
 flowchart LR
 
-    <input name> --> <output name>
+    input_name --> output name
 ```
 
 ### source_to_bronze
 **INPUTS:**
-    - <input name>
+    - input_name
 
 
         This method is designed to bring in data from an external source to the Bronze Alchemy layer
@@ -84,9 +84,9 @@ flowchart LR
 ```python
     @transform(
         BaseMedallion,
-        Input('<input name>', '<adls path>')
+        Input('input_name', '<adls path>')
         # + <other input objects>
-        >> Output('<output name>', '<adls path>')
+        >> Output('output name', '<adls path>')
     )
     def source_to_bronze(self,**context) -> None:
         """
