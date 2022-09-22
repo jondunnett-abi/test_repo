@@ -55,7 +55,7 @@ None
 flowchart LR
 
     output_name --> other_output_name
-    Enrichment_data_source & other_output_name --> None
+    Enrichment_data_source & other_output_name --> final_gold_table
     input_name --> output_name
 ```
 
@@ -105,6 +105,7 @@ flowchart LR
     @transform(
       Input('Enrichment_data_source','<adls path>')
       + Input('other_output_name','<adls_path>')
+      >> Output('final_gold_table','<adls_path>')
     )
     def silver_to_gold(**context) -> None:
         """ """
