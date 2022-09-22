@@ -53,13 +53,14 @@ flowchart LR
 
 
 
+print(a.generate_docs(open('../../docs_template.md','r').read()))
 # something Overview 
 None
 
 ```mermaid
 flowchart LR
 
-    input_name --> output name
+    input_name --> output_name
 ```
 
 ### source_to_bronze
@@ -86,7 +87,7 @@ flowchart LR
         BaseMedallion,
         Input('input_name', '<adls path>')
         # + <other input objects>
-        >> Output('output name', '<adls path>')
+        >> Output('output_name', '<adls path>')
     )
     def source_to_bronze(self,**context) -> None:
         """
