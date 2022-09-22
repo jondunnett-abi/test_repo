@@ -46,3 +46,62 @@ flowchart LR
         print(context)
 
 ```
+
+
+
+
+
+
+
+# something Overview 
+None
+
+```mermaid
+flowchart LR
+
+    <input name> --> <output name>
+```
+
+### source_to_bronze
+**INPUTS:**
+    - <input name>
+
+
+        This method is designed to bring in data from an external source to the Bronze Alchemy layer
+
+        access input and output objects through context i.e. 
+        >>> context["<input name>"].location 
+        --> "<adls path>"
+        
+        Args:
+            None
+            
+        Returns: 
+            None
+        
+
+#### Code
+```python
+    @transform(
+        BaseMedallion,
+        Input('<input name>', '<adls path>')
+        # + <other input objects>
+        >> Output('<output name>', '<adls path>')
+    )
+    def source_to_bronze(self,**context) -> None:
+        """
+        This method is designed to bring in data from an external source to the Bronze Alchemy layer
+
+        access input and output objects through context i.e. 
+        >>> context["<input name>"].location 
+        --> "<adls path>"
+        
+        Args:
+            None
+            
+        Returns: 
+            None
+        """
+        self.logger.info(f"Source data written to {self.bronze_path}")
+
+```
