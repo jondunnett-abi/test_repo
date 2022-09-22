@@ -7,8 +7,15 @@ flowchart LR
     name4 --> name5
 ```
 
-### someclass
+### do_something
+**INPUTS:**
+    - name1
+    - name2
+
  certainly does something 
 
-### someclass
- takes in some adls stuff and transforms it 
+### do_something_else
+**INPUTS:**
+    - name4
+
+ takes in some adls stuff and transforms it  
