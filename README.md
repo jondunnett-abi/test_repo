@@ -155,3 +155,11 @@ flowchart LR
         self.logger.info(f"Source data written to {self.bronze_path}")
 
 ```
+
+
+```sql
+STORE_RECORD_ID DECIMAL(10,0) COMMENT 'Primary key for a account'
+    , PLACEKEY VARCHAR() COMMENT 'Source-agnostic mapping key for an account from the Placekey API'
+    , ERROR_CD VARCHAR() COMMENT 'Null if vpid could be mapped to a placekey_id, otherwise shows the error message from the API'
+    , EDW_START_TSP TIMESTAMP_NTZ(9) COMMENT 'Modified timestamp'
+```
